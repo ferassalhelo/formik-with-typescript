@@ -4,11 +4,15 @@ import { initialValues } from "../../helpers/outputValues";
 import TheForm from "./form";
 import { validations } from "../../helpers/validation";
 
-export default function Forms(Props) {
-  let [data] = useState(initialValues());
+type Iprops = {
+  addData: (list: { id: number }) => void;
+};
 
-  let handleValus = Valus => {
-    let newItem = { ...Valus, id: Math.random() };
+export default function Forms(Props: Iprops) {
+  let [data] = useState<object>(initialValues());
+
+  let handleValus = (Valus: object) => {
+    let newItem: { id: number } = { ...Valus, id: Math.random() };
     Props.addData(newItem);
   };
 
@@ -16,7 +20,7 @@ export default function Forms(Props) {
     <div>
       <Formik
         initialValues={data}
-        onSubmit={Valus => handleValus(Valus)}
+        onSubmit={(Valus): any => handleValus(Valus)}
         validationSchema={validations()}
       >
         <TheForm />

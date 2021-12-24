@@ -1,11 +1,16 @@
 import React from "react";
 
-export default function Lists(Props) {
-  let arr = [...Props.data];
+interface Iprops {
+  data: {}[];
+  deleateItem: (id: number) => any;
+}
+
+export default function Lists(Props: Iprops) {
+  let arr: ({} | null)[] = [...Props.data];
 
   return (
     <div className="my-2 max-w-xl m-auto ">
-      {arr.map(item => {
+      {arr.map((item: any) => {
         return (
           <div
             className="h-12 my-2 bg-red-50 p-4 flex  px-6 justify-around"

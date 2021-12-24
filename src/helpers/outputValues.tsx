@@ -1,11 +1,13 @@
 import { inputs } from "../component/formik/inputs";
 
-// of initial values of formik
-let initialValues = () => {
-  let values = {};
+type valuesForSchema = [string, string | undefined] | null;
 
-  let arr = [...inputs];
-  arr.forEach(item =>
+// of initial values of formik
+let initialValues = (): object => {
+  let values: object = {};
+
+  let arr: object[] = [...inputs];
+  arr.forEach((item: { name?: string }) =>
     item.name !== undefined ? (values = { ...values, [item.name]: "" }) : null
   );
 
@@ -14,10 +16,10 @@ let initialValues = () => {
 
 // of output array contains name field and error massige of scnima
 let arrayValuesOfSchema = () => {
-  let values = [],
-    arr = [...inputs];
+  let values: valuesForSchema[] = [],
+    arr: object[] = [...inputs];
 
-  arr.forEach(item =>
+  arr.forEach((item: { name?: string; errorMassige?: string }) =>
     item.name !== undefined
       ? (values = [...values, [item.name, item.errorMassige]])
       : null

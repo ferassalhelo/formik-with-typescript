@@ -1,12 +1,15 @@
 import * as Yup from "yup";
-import { arrayValuesOfSchema } from "./outputValues";
+import { arrayValuesOfSchema, valusForShema } from "./outputValues";
+import { valuesForSchema } from "./outputValues";
+
+type Tvalues = () => [string, string | undefined] | null;
 
 // of create schima
 let validations = () => {
-  let values = [...arrayValuesOfSchema()];
-  let obj = {};
+  let values: [string, string][] = [...arrayValuesOfSchema()];
+  let obj: any = {};
 
-  values.map(item => {
+  values.map((item: [string, string]) => {
     return (obj[item[0]] = Yup.string().required(item[1]));
   });
 

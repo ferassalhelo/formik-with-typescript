@@ -15,7 +15,40 @@
 
    */
 
-let inputs = [
+type pElement = {
+  id: number;
+  type: string;
+  text: string;
+};
+
+type textInput = {
+  id: number;
+  type?: string;
+  as?: string;
+  name: string;
+  placeholder: string;
+  style: string;
+  errorMassige: string;
+};
+
+type OptionsOfSelectInput = {
+  id: number;
+  disabled?: string;
+  value: string;
+  name: string;
+};
+
+type selectInput = {
+  id: number;
+  component: string;
+  name: string;
+  placeholder: string;
+  style: string;
+  errorMassige: string;
+  options: OptionsOfSelectInput[];
+};
+
+let inputs: Array<pElement | selectInput | textInput> = [
   {
     id: Math.random(),
     type: "p",
