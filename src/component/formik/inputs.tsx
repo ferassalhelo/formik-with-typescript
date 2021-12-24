@@ -15,7 +15,7 @@
 
    */
 
-type pElement = {
+export type pElement = {
   id: number;
   type: string;
   text: string;

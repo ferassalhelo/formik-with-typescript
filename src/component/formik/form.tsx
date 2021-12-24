@@ -4,11 +4,11 @@ import { inputs } from "./inputs";
 import React from "react";
 
 export default function TheForm() {
-  let fields = [...inputs];
+  let fields: {}[] = [...inputs];
 
-  let stylDiv = "my-2 px-1 h-auto";
-  let textStyle = "text-xl font-bold w-full  ";
-  let inputStyle =
+  let stylDiv: string = "my-2 px-1 h-auto";
+  let textStyle: string = "text-xl font-bold w-full  ";
+  let inputStyle: string =
     "h-12 w-full px-5 outline-none border-gray-300 rounded text-gray-600 border";
 
   return (

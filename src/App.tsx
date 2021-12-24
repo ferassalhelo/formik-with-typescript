@@ -2,7 +2,7 @@ import { useState } from "react";
 import Forms from "./component/formik/Formik";
 import Lists from "./component/lists";
 
-export default function App() {
+export default function App(): JSX.Element {
   let [data, handleData] = useState<{}[] | []>([]);
 
   let addlist = (list: { id: number }): void => {

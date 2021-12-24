@@ -1,6 +1,5 @@
 import * as Yup from "yup";
-import { arrayValuesOfSchema, valusForShema } from "./outputValues";
-import { valuesForSchema } from "./outputValues";
+import { arrayValuesOfSchema } from "./outputValues";
 
 type Tvalues = () => [string, string | undefined] | null;
 
